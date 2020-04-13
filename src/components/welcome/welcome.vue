@@ -1,6 +1,6 @@
 <template>
   <div id="welcome">
-    <h1>Kindly fill the survey aftr signing up!</h1>
+    <h1>Kindly fill the survey after signing up!</h1>
     <p>You found the best place to learn to get user opinon!</p>
     <div class="cta">
       <router-link to="/signup">Sign Up</router-link>
