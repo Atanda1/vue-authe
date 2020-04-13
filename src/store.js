@@ -44,7 +44,7 @@ export default new Vuex.Store({
           dispatch('storeUser', authData)
           router.push('/dashboard')
         })
-        .catch(error => console.log(error))
+        .catch(error => alert(error.message))
     },
      postData ({state}, surveyData) {
       if (!state.idToken) {
@@ -54,6 +54,7 @@ export default new Vuex.Store({
         .then(res => {
          console.log(res)
         })
+        alert("Done")
         .catch(error => console.log(error))
     },
     login ({commit}, authData) {
@@ -74,7 +75,7 @@ export default new Vuex.Store({
 
           router.push('/dashboard')
         })
-        .catch(error => console.log(error.message))
+        .catch(error => alert(error.message))
     },
     tryAutoLogin ({commit}) {
       const token = localStorage.getItem('token')
