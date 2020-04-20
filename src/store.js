@@ -42,9 +42,10 @@ export default new Vuex.Store({
           localStorage.setItem('userId', res.data.localId)
           localStorage.setItem('email', res.data.email)
           dispatch('storeUser', authData)
-          router.push('/dashboard')
-        })
-        .catch(error => alert(error.message))
+          setTimeout(function () {
+            router.push('/dashboard')
+          }, 3000)
+        }).catch(error => alert(error.message))
     },
      postData ({state}, surveyData) {
       if (!state.idToken) {
@@ -93,6 +94,7 @@ export default new Vuex.Store({
       commit('clearAuthData')
       localStorage.removeItem('token')
       localStorage.removeItem('userId')
+      localStorage.removeItem('email')
       router.replace('/signin')
     },
     storeUser ({ state}, userData) {
